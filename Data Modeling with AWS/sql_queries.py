@@ -76,7 +76,7 @@ user_table_create = (""" CREATE TABLE IF NOT EXISTS users (
 """)
 
 song_table_create = ("""CREATE TABLE IF NOT EXISTS songs (
-        song_id         VARCHAR PRIMARY KEY,
+        song_id         VARCHAR SORTKEY PRIMARY KEY,
         title           VARCHAR NOT NULL,
         artist_id       VARCHAR NOT NULL DISTKEY,
         year            INT,
@@ -157,8 +157,8 @@ song_table_insert = ("""INSERT INTO songs
         artist_id, 
         year, 
         duration
-        FROM staging_songs
-        WHERE song_id IS NOT NULL;
+        FROM staging_songs;
+        
 """)
 
 artist_table_insert = ("""INSERT INTO artists
