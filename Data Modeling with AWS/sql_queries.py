@@ -167,7 +167,11 @@ artist_table_insert = ("""INSERT INTO artists
         artist_location, 
         artist_latitude, 
         artist_longitude
-        FROM staging_songs;
+        FROM staging_songs
+        WHERE song_id IS NOT NULL
+        AND title IS NOT NULL
+        AND artist_id IS NOT NULL
+        AND song_id NOT IN (SELECT DISTINCT song_id FROM songs);
 """)
 
 time_table_insert = ("""INSERT INTO time 
