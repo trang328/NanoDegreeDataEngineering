@@ -157,7 +157,8 @@ song_table_insert = ("""INSERT INTO songs
         artist_id, 
         year, 
         duration
-        FROM staging_songs;
+        FROM staging_songs
+        WHERE song_id is NOT NULL;
         
 """)
 
