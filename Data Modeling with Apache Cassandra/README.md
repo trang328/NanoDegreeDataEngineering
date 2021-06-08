@@ -20,3 +20,18 @@ List of available data columns :
 artist, auth, firstName, gender, itemInSession, lastName, length, level, location, method, page, registration, sessionId, song, status, ts, userId
 ```
 
+## Database Schema Design 
+
+The keyspace design is shown in the image below. Each table is modeled to answer a specific known query. This model enables to query the database schema containing huge amounts of data. Relational databases are not suitable in this scenario due to the magnitude of data. 
+
+![database](./images/keyspace.png)
+
+## Project structure
+
+|     File / Folder      |                         Description                          |
+| :--------------------: | :----------------------------------------------------------: |
+|       event_data       | Folder at the root of the project, where all user activity CSVs reside |
+| event_datafile_new.csv | Contains denormalized dataset|
+|    Project 2.ipynb     | iPython notebook containing the ETL pipeline including data extraction, modeling and loading into the keyspace tables. |
+
+
