@@ -50,17 +50,11 @@ An entity relationship diagram (ERD) of the data model is given below.
 
 Follow the steps to extract and load the data into the data model.
 
-1. Run `create_tables.py` to create database and tables in `sql_queries.py`
+1. Create tables using CREATE and DROP statements in  `sql_queries.py`
 
-   ```python
-   python create_tables.py
-   ```
+2. Run `create_tables.py` to create database and tables 
 
-2. Build ETL process and load data into database by 
-
-   ```python
-   python etl.py
-   ```
+4. Build ETL process and load data into database by running `etl.py`
 
 3. Check whether the data has been loaded into database by executing queries in `test.ipynb`
 
