@@ -25,3 +25,30 @@ Sample Record :
 ```
 {"artist": null, "auth": "Logged In", "firstName": "Walter", "gender": "M", "itemInSession": 0, "lastName": "Frye", "length": null, "level": "free", "location": "San Francisco-Oakland-Hayward, CA", "method": "GET","page": "Home", "registration": 1540919166796.0, "sessionId": 38, "song": null, "status": 200, "ts": 1541105830796, "userAgent": "\"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/36.0.1985.143 Safari\/537.36\"", "userId": "39"}
 ```
+
+## Database Schema Design 
+
+The Star Database Schema used for data modeling in this ETL pipeline. There is one fact table containing all the metrics (facts) associated to each event (user actions), and four dimensions tables, containing associated information such as user name, artist name, song meta-data etc. This model enables to search the database schema with the minimum number of  *SQL JOIN*s possible and enable fast read queries. The amount of data we need to analyze is not big enough to require big data solutions or NoSQL databases.
+
+An entity relationship diagram (ERD) of the data model is given below. 
+
+![database](./images/database.png)
+
+## Project structure
+
+Files in this repository:
+
+|  File / Folder   |                         Description                          |
+| :--------------: | :----------------------------------------------------------: |
+|       data       | Folder at the root of the project, where all song and log data JSONS reside |
+|      images      |  Folder at the root of the project, where images are stored  |
+|  sql_queries.py  |      Contains the SQL queries for data modeling and ETL      |
+| create_tables.py |         Drops and creates tables. (Reset the tables)         |
+|    test.ipynb    |                Exploring the database tables                 |
+|    etl.ipynb     | Processes a file from song_data and log_data and loads the data into tables |
+|      etl.py      | Processes all files from song_data and log_data and loads them into  tables |
+|      README      |                         Readme file                          |
+
+
+
+
