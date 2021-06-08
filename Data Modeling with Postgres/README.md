@@ -46,6 +46,25 @@ An entity relationship diagram (ERD) of the data model is given below.
 |      etl.py      | Processes all files from song_data and log_data and loads them into  tables |
 |      README      |                         Readme file                          |
 
+## Project Steps
+
+Follow the steps to extract and load the data into the data model.
+
+1. Run `create_tables.py` to create/reset the tables by
+
+   ```python
+   python create_tables.py
+   ```
+
+2. Run ETL process and load data into database by 
+
+   ```python
+   python etl.py
+   ```
+
+3. Check whether the data has been loaded into database by executing queries in `test.ipynb`
+
+
 
 
 
