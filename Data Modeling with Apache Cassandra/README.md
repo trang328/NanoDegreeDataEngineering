@@ -24,7 +24,7 @@ artist, auth, firstName, gender, itemInSession, lastName, length, level, locatio
 
 The keyspace design is shown in the image below. Each table is modeled to answer a specific known query. This model enables to query the database schema containing huge amounts of data. Relational databases are not suitable in this scenario due to the magnitude of data. 
 
-![database](./images/keyspace.png)
+![database](./Cassandra.png)
 
 ## Project structure
 
@@ -34,4 +34,13 @@ The keyspace design is shown in the image below. Each table is modeled to answer
 | event_datafile_new.csv | Contains denormalized dataset|
 |    Project 2.ipynb     | iPython notebook containing the ETL pipeline including data extraction, modeling and loading into the keyspace tables. |
 
+## Project Steps
+
+1. Run Project_DataModeling_Cassandra.ipynb 
+
+2. Run Part 1 to create event_datafile_new.csv
+
+3. Run Part 2 to initiate the ETL process and load data into tables
+
+4. Check whether the data has been loaded into database by executing SELECT queries
 
