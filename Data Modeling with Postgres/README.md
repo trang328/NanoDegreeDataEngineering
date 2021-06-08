@@ -36,12 +36,9 @@ An entity relationship diagram (ERD) of the data model is given below.
 
 ## Project structure
 
-Files in this repository:
-
-|  File / Folder   |                         Description                          |
+|  File            |                         Description                          |
 | :--------------: | :----------------------------------------------------------: |
 |       data       | Folder at the root of the project, where all song and log data JSONS reside |
-|      images      |  Folder at the root of the project, where images are stored  |
 |  sql_queries.py  |      Contains the SQL queries for data modeling and ETL      |
 | create_tables.py |         Drops and creates tables. (Reset the tables)         |
 |    test.ipynb    |                Exploring the database tables                 |
