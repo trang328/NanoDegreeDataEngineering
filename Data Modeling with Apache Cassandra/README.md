@@ -32,11 +32,11 @@ The keyspace design is shown in the image below. Each table is modeled to answer
 | :--------------------: | :----------------------------------------------------------: |
 |       event_data       | Folder at the root of the project, where all user activity CSVs reside |
 | event_datafile_new.csv | Contains denormalized dataset|
-|    Project 2.ipynb     | iPython notebook containing the ETL pipeline including data extraction, modeling and loading into the keyspace tables. |
+|    Project_DataModeling_Cassandra.ipynb     | iPython notebook containing the ETL pipeline including data extraction, modeling and loading into the keyspace tables. |
 
 ## Project Steps
 
-1. Run Project_DataModeling_Cassandra.ipynb 
+1. Run Project_DataModeling_Cassandra.ipynb to create tables in order to answer the queries outlined in the project template
 
 2. Run Part 1 to create event_datafile_new.csv
 
