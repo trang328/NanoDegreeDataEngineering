@@ -33,7 +33,43 @@ The Star Database Schema (Fact and Dimension Schema) is used for data modeling i
 
 The data stored on S3 buckets is extracted to staging tables `staging_events` and `staging_songs` on Redshift. Then the data from these tables are transformed and inserted into the fact and dimensional tables. An entity relationship diagram (ERD) of the data model is given below. 
 
+![database](./AWS.png)
 
+## Project structure
+
+|     File / Folder      |                         Description                          |
+| :--------------------: | :----------------------------------------------------------: |
+| aws_cluster_create.py  | Creates and sets up a Redshift cluster on AWS with proper configurations |
+| aws_cluster_destroy.py |       Destorys the Redshift cluster on AWS, if exists        |
+|     sql_queries.py     | Contains the SQL queries for staging, schema definition and ETL |
+|    create_tables.py    | Drops and creates tables on AWS Redshift (Reset the tables)  |
+|         etl.py         | Stages and transforms the data from S3 buckets and loads them into tables |
+|       analyze.py       | Basic querying from all tables created to ensure their validity |
+|        dwh.cfg         |              Sample configuration file for AWS               |
+|
+
+
+## Project Steps
+
+1. Design schemas for fact and dimension tables 
+
+2. Edit the `dwh.cfg` configuration file and fill in the AWS Access Key and Secret Key fields
+
+3. Run `aws_cluster_create.py` to create the clusters on AWS 
+
+   The type, number of nodes and other specifications of cluster will be as per the configuration file. Wait till cluster creation confirmation is displayed.
+
+4. Run `create_tables.py` to create/reset the tables
+
+5. Run ETL process and load data into database `elt.py`
+
+   This will execute SQL queries corresponding to staging data from S3 on Redshift and to transform and insert into the Postgres tables on Redshift.
+
+6. Run `analyze.py` to validate the entry of data into tables
+
+    This runs some sample queries from all the tables created.
+
+7. Run `aws_cluster_destroy.py` to destroy the clusters on AWS
 
 
 
